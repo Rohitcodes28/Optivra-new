@@ -2,8 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optivra — Transforming Ideas into Intelligent Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- ========== SEO META TAGS ========== -->
+    <title>Optivra — AI & Technology Consulting | Transforming Ideas into Intelligent Solutions</title>
+    <meta name="description" content="Optivra is a technology consultancy helping businesses unlock the power of AI, machine learning, and modern software solutions. Expert-led team, 20+ remote specialists worldwide.">
+    <meta name="keywords" content="AI consulting, machine learning, data science, technology consulting, software development, cloud automation, AI solutions, business transformation, Bangalore">
+    <meta name="author" content="Optivra">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- ========== OPEN GRAPH / SOCIAL MEDIA ========== -->
+    <meta property="og:title" content="Optivra — Transforming Ideas into Intelligent Solutions">
+    <meta property="og:description" content="AI & Technology Consulting firm helping businesses scale with intelligent solutions. Based in Bangalore, serving globally.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200">
+    <meta property="og:url" content="https://optivra.in">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- ========== CANONICAL TAG ========== -->
+    <link rel="canonical" href="https://optivra.in">
+    
+    <!-- ========== FAVICON ========== -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23C8A165'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='%231A1A1A' font-family='Arial'>O</text></svg>">
     
     <!-- Fonts & Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,6 +215,43 @@
             display: none;
         }
 
+        /* ========== MOBILE MENU ========== */
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: left 0.3s;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+        }
+
         /* ========== SECTIONS ========== */
         section {
             position: relative;
@@ -205,7 +264,7 @@
             padding: 0 4rem;
         }
 
-        /* ========== HERO SECTION (FIXED) ========== */
+        /* ========== HERO SECTION ========== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -784,7 +843,7 @@
             font-weight: 700;
         }
 
-        /* ========== SERVICES SECTION (5 SERVICES) ========== */
+        /* ========== SERVICES SECTION ========== */
         .services {
             padding: 8rem 0;
             background: var(--white);
@@ -1009,6 +1068,115 @@
             color: rgba(255,255,255,0.7);
         }
 
+        /* ========== FAQ SECTION (PROFESSIONAL) ========== */
+        .faq {
+            padding: 8rem 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 0% 0%, rgba(200, 161, 101, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-item {
+            background: var(--light);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(200, 161, 101, 0.1);
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .faq-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(200, 161, 101, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(200, 161, 101, 0.02);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+            padding-right: 1rem;
+            transition: color 0.3s;
+        }
+
+        .faq-item.active .faq-question h3 {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 10px rgba(200, 161, 101, 0.3);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            background: var(--dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(200, 161, 101, 0.02);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1rem;
+        }
+
         /* ========== CONTACT SECTION ========== */
         .contact {
             padding: 8rem 0;
@@ -1176,6 +1344,24 @@
             color: var(--gold);
         }
 
+        .address-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .address-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .address-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
         .social-links {
             display: flex;
             gap: 1rem;
@@ -1265,9 +1451,15 @@
             .container {
                 padding: 0 2rem;
             }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .nav-links {
                 display: none;
             }
+            
             .hero h1 {
                 font-size: 3rem;
             }
@@ -1301,6 +1493,9 @@
                 margin-bottom: 2rem;
                 text-align: center;
             }
+            .faq-question h3 {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -1319,22 +1514,26 @@
     <!-- Navigation -->
     <nav id="nav">
         <a href="#" class="logo">OPTIVRA<span>.</span></a>
-        <div class="nav-links">
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="navLinks">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#team">Team</a>
             <a href="#services">Services</a>
             <a href="#process">Process</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact" class="contact-btn">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section (FIXED - Everything Visible) -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
             <canvas id="heroCanvas"></canvas>
         </div>
-        <div class="container" style="position: relative; z-index: 2;">
+        <div class="container">
             <div class="hero-content">
                 <div class="hero-pre">Transforming Ideas into</div>
                 <h1>
@@ -1456,7 +1655,7 @@
                 </div>
                 <div class="about-image reveal reveal-right">
                     <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Optivra Team">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Optivra Team" loading="lazy">
                         <div class="experience-badge">
                             10+ Years<br>of Excellence
                         </div>
@@ -1483,7 +1682,7 @@
                 <!-- CEO -->
                 <div class="team-card reveal reveal-bottom" data-delay="0">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Sarah Chen">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop" alt="Sarah Chen" loading="lazy">
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1492,14 +1691,14 @@
                     <div class="member-info">
                         <h3>Sarah Chen</h3>
                         <p class="member-role">Chief Executive Officer</p>
-                        <p class="member-bio">15+ years in AI strategy. Former Head of AI at Google. Stanford PhD. Leading Optivra's global vision.</p>
+                        <p class="member-bio">15+ years in AI strategy. Former Head of AI at Google. Stanford PhD.</p>
                     </div>
                 </div>
 
                 <!-- CTO -->
                 <div class="team-card reveal reveal-bottom" data-delay="0.2">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Michael Rodriguez">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Michael Rodriguez" loading="lazy">
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
@@ -1508,14 +1707,14 @@
                     <div class="member-info">
                         <h3>Michael Rodriguez</h3>
                         <p class="member-role">Chief Technology Officer</p>
-                        <p class="member-bio">Cloud architect. Built scalable systems for Fortune 500 companies. MIT alum. Leads 20+ remote engineers.</p>
+                        <p class="member-bio">Cloud architect. Built scalable systems for Fortune 500. MIT alum.</p>
                     </div>
                 </div>
 
                 <!-- CMO -->
                 <div class="team-card reveal reveal-bottom" data-delay="0.4">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Priya Sharma">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop" alt="Priya Sharma" loading="lazy">
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1524,14 +1723,14 @@
                     <div class="member-info">
                         <h3>Priya Sharma</h3>
                         <p class="member-role">Chief Marketing Officer</p>
-                        <p class="member-bio">Growth strategist. Previously CMO at 2 unicorns. Expert in AI-driven marketing and brand building.</p>
+                        <p class="member-bio">Growth strategist. Previously CMO at 2 unicorns.</p>
                     </div>
                 </div>
 
                 <!-- CSO -->
                 <div class="team-card reveal reveal-bottom" data-delay="0.6">
                     <div class="member-image">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="David Kumar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="David Kumar" loading="lazy">
                         <div class="member-social">
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-github"></i></a>
@@ -1540,7 +1739,7 @@
                     <div class="member-info">
                         <h3>David Kumar</h3>
                         <p class="member-role">Chief Strategy Officer</p>
-                        <p class="member-bio">Ex-McKinsey consultant. Harvard Business School. Drives business transformation and strategic partnerships.</p>
+                        <p class="member-bio">Ex-McKinsey consultant. Harvard Business School.</p>
                     </div>
                 </div>
             </div>
@@ -1552,7 +1751,7 @@
         </div>
     </section>
 
-    <!-- Services Section (5 SERVICES - Security & Governance Removed) -->
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal reveal-top">
@@ -1575,19 +1774,19 @@
                 <div class="service-card reveal reveal-bottom" data-delay="0.4">
                     <div class="service-icon"><i class="fas fa-database"></i></div>
                     <h3>Data Science & Analytics</h3>
-                    <p>Turn raw data into actionable intelligence with advanced analytics and visualization.</p>
+                    <p>Turn raw data into actionable intelligence with advanced analytics.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card reveal reveal-bottom" data-delay="0.6">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
                     <h3>Full-Stack Development</h3>
-                    <p>End-to-end product development from concept to deployment, using modern tech stacks.</p>
+                    <p>End-to-end product development from concept to deployment.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card reveal reveal-bottom" data-delay="0.8">
                     <div class="service-icon"><i class="fas fa-cloud"></i></div>
                     <h3>Cloud & Automation</h3>
-                    <p>Scalable cloud infrastructure and intelligent automation to streamline operations.</p>
+                    <p>Scalable cloud infrastructure and intelligent automation.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -1606,40 +1805,40 @@
                     <div class="process-content">
                         <div class="process-number">01</div>
                         <h3>Discovery & Analysis</h3>
-                        <p>We conduct a thorough business audit, assess current systems, and identify pain points. This phase includes stakeholder interviews, data review, and technology stack evaluation.</p>
+                        <p>We conduct a thorough business audit, assess current systems, and identify pain points.</p>
                     </div>
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Discovery">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Discovery" loading="lazy">
                     </div>
                 </div>
                 <div class="process-item reveal reveal-right">
                     <div class="process-content">
                         <div class="process-number">02</div>
                         <h3>Design & Planning</h3>
-                        <p>We create a customized roadmap, propose architecture, and project ROI. This includes wireframes, technical specifications, and a detailed project timeline.</p>
+                        <p>We create a customized roadmap, propose architecture, and project ROI.</p>
                     </div>
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Design">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop" alt="Design" loading="lazy">
                     </div>
                 </div>
                 <div class="process-item reveal reveal-left">
                     <div class="process-content">
                         <div class="process-number">03</div>
                         <h3>Implementation & Testing</h3>
-                        <p>We deploy the solution, set up automation, and train your team. Rigorous testing ensures everything works perfectly before launch.</p>
+                        <p>We deploy the solution, set up automation, and train your team.</p>
                     </div>
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Implementation">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Implementation" loading="lazy">
                     </div>
                 </div>
                 <div class="process-item reveal reveal-right">
                     <div class="process-content">
                         <div class="process-number">04</div>
                         <h3>Optimization & Support</h3>
-                        <p>We provide continuous monitoring, performance tracking, and ongoing improvements to ensure long-term success.</p>
+                        <p>We provide continuous monitoring and ongoing improvements.</p>
                     </div>
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Support">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Support" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1688,6 +1887,107 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header reveal reveal-top">
+                <div class="section-subtitle">Got Questions?</div>
+                <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+                <p class="section-description">Everything you need to know about working with Optivra.</p>
+            </div>
+            
+            <div class="faq-grid">
+                <!-- FAQ 1 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0">
+                    <div class="faq-question">
+                        <h3>What services does Optivra offer?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer AI & Machine Learning consulting, Data Science & Analytics, Full-Stack Development, Cloud Automation, and Technology Strategy. Each solution is tailored to your specific business needs.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.1">
+                    <div class="faq-question">
+                        <h3>How do you ensure data security?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We follow industry best practices including GDPR compliance, end-to-end encryption, regular security audits, and strict access controls. Your data never leaves secure environments without your explicit consent.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.2">
+                    <div class="faq-question">
+                        <h3>What industries do you work with?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work across FinTech, Healthcare, E-commerce, Manufacturing, and Education. Our team has deep domain expertise in each industry, ensuring solutions that are contextually relevant.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.3">
+                    <div class="faq-question">
+                        <h3>How long does a typical project take?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on scope. A simple AI integration might take 4-6 weeks, while enterprise-scale transformations can span 3-6 months. We provide detailed timelines during consultation.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.4">
+                    <div class="faq-question">
+                        <h3>Do you offer ongoing support after project completion?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer flexible maintenance and support packages including bug fixes, performance monitoring, security updates, and feature enhancements as your business grows.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.5">
+                    <div class="faq-question">
+                        <h3>What makes Optivra different from other tech consultancies?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We combine deep technical expertise with business acumen. Our team includes former Fortune 500 executives, PhDs in AI/ML, and seasoned engineers focused on delivering measurable business impact.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.6">
+                    <div class="faq-question">
+                        <h3>How do you handle project pricing?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible pricing models: fixed-price for well-defined projects, time & material for evolving requirements, and dedicated teams for long-term partnerships. Transparent with no hidden fees.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item reveal reveal-bottom" data-delay="0.7">
+                    <div class="faq-question">
+                        <h3>Can you work with our existing tech stack?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We're technology-agnostic and work with your existing stack whether it's Python, Java, JavaScript, AWS/Azure/GCP, or legacy systems. We integrate seamlessly with your current workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1708,15 +2008,8 @@
                             <div class="contact-icon"><i class="fas fa-phone"></i></div>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+91-7439071619</p>
+                                <p>+91-8360934511</p>
                                 <p>+91-6280179738</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-globe"></i></div>
-                            <div>
-                                <h4>Website</h4>
-                                <p>www.optivra.in</p>
                             </div>
                         </div>
                     </div>
@@ -1747,12 +2040,20 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Address -->
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <div class="footer-logo">OPTIVRA<span>.</span></div>
                 <p>Transforming ideas into intelligent solutions with a global team of experts.</p>
+                <div class="address-item">
+                    <i class="fas fa-map-marker-alt address-icon"></i>
+                    <div class="address-text">
+                        Prestige M.G Road,<br>
+                        Bangalore, 560001<br>
+                        India
+                    </div>
+                </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1771,10 +2072,10 @@
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#">AI Consulting</a></li>
-                    <li><a href="#">Data Science</a></li>
-                    <li><a href="#">Development</a></li>
-                    <li><a href="#">Cloud Automation</a></li>
+                    <li><a href="#services">AI Consulting</a></li>
+                    <li><a href="#services">Data Science</a></li>
+                    <li><a href="#services">Development</a></li>
+                    <li><a href="#services">Cloud Automation</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1818,6 +2119,21 @@
             follower.style.opacity = '1';
         });
 
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('nav');
@@ -1828,7 +2144,7 @@
             }
         });
 
-        // Smooth Scroll for Navigation
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1844,7 +2160,7 @@
 
         // Active Link on Scroll
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
+        const navLinks2 = document.querySelectorAll('.nav-links a');
 
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1856,7 +2172,7 @@
                 }
             });
 
-            navLinks.forEach(link => {
+            navLinks2.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
@@ -1864,7 +2180,7 @@
             });
         });
 
-        // Reveal Animations on Scroll
+        // Reveal Animations
         function reveal() {
             const reveals = document.querySelectorAll('.reveal');
             
@@ -1876,7 +2192,6 @@
                 if (revealTop < windowHeight - revealPoint) {
                     element.classList.add('active');
                     
-                    // Add delay if specified
                     const delay = element.dataset.delay;
                     if (delay) {
                         element.style.transitionDelay = `${delay}s`;
@@ -1886,7 +2201,7 @@
         }
 
         window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
+        reveal();
 
         // Hero Canvas Animation
         const canvas = document.getElementById('heroCanvas');
@@ -1935,65 +2250,25 @@
                     ctx.fill();
                 });
                 
-                // Draw connections
-                particles.forEach(p1 => {
-                    particles.forEach(p2 => {
-                        const dx = p1.x - p2.x;
-                        const dy = p1.y - p2.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 100) {
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(200, 161, 101, ${0.1 * (1 - distance/100)})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.moveTo(p1.x, p1.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.stroke();
-                        }
-                    });
-                });
-                
                 requestAnimationFrame(animate);
             }
             
             animate();
         }
 
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
         // Form Submission
         document.getElementById('contactForm')?.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thank you for reaching out! We\'ll get back to you soon.');
             e.target.reset();
-        });
-
-        // Parallax Effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // 3D Tilt Effect for Cards
-        document.querySelectorAll('.problem-card, .service-card, .choose-card, .team-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
         });
     </script>
 </body>
